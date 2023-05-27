@@ -22,3 +22,13 @@ button.color:hover{color:#C40013!important}
 .navdrawer-nav .nav-link.active, .navdrawer-nav .nav-link:active{color:#C40013!important}
 
 .btn-primary{background-color:#C40013!important}
+
+.logo,logo {
+    background: url(../logotype.png) no-repeat no-repeat 3px 10px;
+    background-size: 220px;
+    text-indent: 49px;
+    min-width: 225px;
+    padding: 0 0px 11px 227px !important;
+    line-height: 24px !important;
+}
+/*.logo, logo:hover{background-color:rgba(0, 0, 0, 0.12)}*/
