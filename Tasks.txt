@@ -1,3 +1,5 @@
+tamigucho.com/us/tamigucho-video-games/tamigucho-pink-version-and-tamigucho-dark-version should redirect to pinkdark.tamigucho.com/en-us
+
 I do understand copyright enforcement on fangames such as Uranium, Pokemon have to maintain a consistensy and quality across its products (a thing Uranium hadn't on its fakemons and game story/experience)
 Manifesto
 
@@ -37,11 +39,9 @@ Tamigucho site:
 - diff Pokémon: list with history of tamers instead of just only OT
 ep: important notes about tamigucho: its start, passion, purpose, about A&B games, the brand new elementary types, cross-tamer friendship, etc
 
-www.tamigucho.com/us/pokedex should redirect to tamigucho.com/pedia; 404 page depicting Book-a-boo
+tamigucho.com/us/pokedex should redirect to tamigucho.com/pedia; 404 page depicting Book-a-boo
 -
 then: https://github.com/danimesq/gitamigucho
-
-www.tamigucho.com/us/tamigucho-video-games/tamigucho-pink-version-and-tamigucho-dark-version should redirect to pinkdark.tamigucho.com/en-us
 
 Pokémon always had to have a blockchain
 Lots of Mews and their history were wasted https://pt.m.wikipedia.org/wiki/Mew_(Pokémon)
