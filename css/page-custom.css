@@ -24,8 +24,8 @@ button.color:hover{color:#C40013!important}
 .btn-primary{background-color:#C40013!important}
 
 .logo,logo {
-    background: url(../logotype.png) no-repeat no-repeat 3px 10px;
-    background-size: 220px;
+    background: url(../logotype.png) no-repeat no-repeat 3px -4px;
+    background-size: 170px;
     text-indent: 49px;
     min-width: 225px;
     padding: 0 0px 11px 227px !important;
