@@ -1,8 +1,8 @@
 tamigucho.com/us/tamigucho-video-games/tamigucho-pink-version-and-tamigucho-dark-version should redirect to pinkdark.tamigucho.com/en-us
 
+https://github.com/danimesq/gitamigucho
+
 tamigucho.com/us/pokedex should redirect to tamigucho.com/pedia; 404 page depicting Book-a-boo
--
-then: https://github.com/danimesq/gitamigucho
 
 I do understand copyright enforcement on fangames such as Uranium, Pokemon have to maintain a consistensy and quality across its products (a thing Uranium hadn't on its fakemons and game story/experience)
 Manifesto
