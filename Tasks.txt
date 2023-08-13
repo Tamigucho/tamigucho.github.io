@@ -1,7 +1,6 @@
-https://github.com/danimesq/gitamigucho
-
-tamigucho.com/us/pokedex should redirect to tamigucho.com/tamipedia
 tamipedia: 404 page depicting Book-a-boo https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site
+
+https://github.com/danimesq/gitamigucho
 
 I do understand copyright enforcement on fangames such as Uranium, Pokemon have to maintain a consistensy and quality across its products (a thing Uranium hadn't on its fakemons and game story/experience)
 Manifesto
