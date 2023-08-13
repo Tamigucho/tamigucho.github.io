@@ -1,6 +1,6 @@
-at header, have square images such as the "Pink & Dark" logo link pointing to pinkdark.tamigucho
-
 at tamipedia page for each tamigucho: creator, illustrator.
+
+at header, have square images such as the "Pink & Dark" logo link pointing to pinkdark.tamigucho
 
 mv phonemon.tamigucho.com to tamigucho.com (redirect) and split things. for example, the new creatures will be moved to factory.tamigucho.com! also /history
 
