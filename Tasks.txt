@@ -1,3 +1,5 @@
+improve /us redirect, by detecting the current URL and appending the destiny to it
+
 I do understand copyright enforcement on fangames such as Uranium, Pokemon have to maintain a consistensy and quality across its products (a thing Uranium hadn't on its fakemons and game story/experience)
 Manifesto
 
