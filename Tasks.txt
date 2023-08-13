@@ -1,5 +1,3 @@
-tamigucho.com/us/tamigucho-video-games/tamigucho-pink-version-and-tamigucho-dark-version should redirect to pinkdark.tamigucho.com/en-us
-
 https://github.com/danimesq/gitamigucho
 
 tamigucho.com/us/pokedex should redirect to tamigucho.com/tamipedia
