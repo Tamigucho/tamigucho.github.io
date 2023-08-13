@@ -1,3 +1,5 @@
+at tamipedia page for each tamigucho: creator, illustrator.
+
 https://tamigucho.com/api/tamipedia fix issue of curl getting HTML rather than JSON
 
 improve /us redirect, by detecting the current URL and appending the destiny to it
