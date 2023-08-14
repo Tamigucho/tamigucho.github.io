@@ -1,8 +1,3 @@
-- diff Pokémon: not all Tamiguchos are born independent; some require parenting
-- diff Pokémon: non-fixed and bodily elementary types
-- diff Pokémon: more than 1 "owner" possible
-- diff Pokémon: list with history of tamers instead of just only OT
-
 at tamipedia page for each tamigucho: creator, illustrator.
 
 /history/
