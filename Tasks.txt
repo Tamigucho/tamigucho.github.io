@@ -3,6 +3,11 @@ https://tamigucho.com/api/tamipedia fix issue of curl getting HTML rather than J
 improve /us redirect, by detecting the current URL and appending the destiny to it
 
 I do understand copyright enforcement on fangames such as Uranium, Pokemon have to maintain a consistensy and quality across its products (a thing Uranium hadn't on its fakemons and game story/experience)
+-
+Tamigucho site:
+- Fix the mistakes done from Pokémon (no NFTs for pets like Mew, bias)
+- Bring diversity to the already flourishing niche/genre of mon-catching
+- Stablish a linked multiverse for interoperability
 
 Manifesto
 
