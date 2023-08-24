@@ -1,0 +1,92 @@
+This folder: /media/daniella/B/git/Tamigucho/Sites/site/tamipedia
+
+  File: ./dewhale
+  Size: 0         	Blocks: 0          IO Block: 4096   directory
+Device: 8,20	Inode: 4119770     Links: 1
+Access: (0755/drwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-23 19:14:46.829846300 -0300
+Modify: 2023-08-23 21:36:23.710241200 -0300
+Change: 2023-08-23 21:36:23.710241200 -0300
+ Birth: 2023-08-12 19:40:03.910859900 -0300
+IPFS hash: 
+------------------------------
+  File: ./favicon.png
+  Size: 31139     	Blocks: 64         IO Block: 4096   regular file
+Device: 8,20	Inode: 4192150     Links: 1
+Access: (0755/-rwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-24 13:28:09.122947800 -0300
+Modify: 2023-08-24 02:19:40.888912300 -0300
+Change: 2023-08-24 15:57:34.126192200 -0300
+ Birth: 2023-08-24 13:28:08.790932400 -0300
+IPFS hash: QmaNCNypdPshcq56tACYgPKPiA5Mqvkmeh8rYTQ5RDztBK
+------------------------------
+  File: ./img
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 8,20	Inode: 3094427     Links: 1
+Access: (0755/drwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-23 19:14:46.830843100 -0300
+Modify: 2023-08-23 21:37:14.334311300 -0300
+Change: 2023-08-23 21:37:14.334311300 -0300
+ Birth: 2023-06-18 17:48:43.248702100 -0300
+IPFS hash: 
+------------------------------
+  File: ./index.html
+  Size: 3566      	Blocks: 8          IO Block: 4096   regular file
+Device: 8,20	Inode: 4191958     Links: 1
+Access: (0755/-rwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-23 21:32:52.130948400 -0300
+Modify: 2023-08-23 21:32:46.422994100 -0300
+Change: 2023-08-23 21:32:46.542993100 -0300
+ Birth: 2023-08-23 21:32:46.422994100 -0300
+IPFS hash: QmfUm5eStpSxZEY49gKUXBjiE8Dc5Xjr1nrsuHtuiSgjyk
+------------------------------
+  File: ./petalrock
+  Size: 0         	Blocks: 0          IO Block: 4096   directory
+Device: 8,20	Inode: 4119768     Links: 1
+Access: (0755/drwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-23 19:14:46.831845600 -0300
+Modify: 2023-08-23 21:36:11.418236300 -0300
+Change: 2023-08-23 21:36:11.418236300 -0300
+ Birth: 2023-08-12 19:39:38.940930400 -0300
+IPFS hash: 
+------------------------------
+  File: ./potaseal
+  Size: 0         	Blocks: 0          IO Block: 4096   directory
+Device: 8,20	Inode: 4119776     Links: 1
+Access: (0755/drwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-23 19:14:46.832843500 -0300
+Modify: 2023-08-23 21:35:57.378236900 -0300
+Change: 2023-08-23 21:35:57.378236900 -0300
+ Birth: 2023-08-12 19:42:05.788195500 -0300
+IPFS hash: 
+------------------------------
+  File: ./sprouterra
+  Size: 0         	Blocks: 0          IO Block: 4096   directory
+Device: 8,20	Inode: 4119772     Links: 1
+Access: (0755/drwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-23 19:14:46.833840800 -0300
+Modify: 2023-08-23 21:35:45.966242300 -0300
+Change: 2023-08-23 21:35:45.966242300 -0300
+ Birth: 2023-08-12 19:41:30.219978400 -0300
+IPFS hash: 
+------------------------------
+  File: ./tamipediaicon.svg
+  Size: 3738      	Blocks: 8          IO Block: 4096   regular file
+Device: 8,20	Inode: 4192151     Links: 1
+Access: (0755/-rwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-24 13:28:09.086946200 -0300
+Modify: 2023-08-24 02:19:59.651560400 -0300
+Change: 2023-08-24 13:28:08.866935900 -0300
+ Birth: 2023-08-24 13:28:08.866935900 -0300
+IPFS hash: QmNxJLffJtJQMhgAdD46csnXrEdt4VRCM2jJL5dH5zDAZE
+------------------------------
+  File: ./treearth
+  Size: 0         	Blocks: 0          IO Block: 4096   directory
+Device: 8,20	Inode: 4119774     Links: 1
+Access: (0755/drwxr-xr-x)  Uid: ( 1000/daniella)   Gid: ( 1000/daniella)
+Access: 2023-08-23 19:14:46.834841900 -0300
+Modify: 2023-08-23 21:35:19.622272200 -0300
+Change: 2023-08-23 21:35:19.622272200 -0300
+ Birth: 2023-08-12 19:41:45.089491600 -0300
+IPFS hash: 
+------------------------------
