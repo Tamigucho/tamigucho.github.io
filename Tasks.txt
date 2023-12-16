@@ -1,4 +1,6 @@
-https://tamigucho.com/api/tamipedia fix issue of curl getting HTML rather than JSON
+- /pedia redirect in tamigucho.com
+
+-? https://tamigucho.com/api/tamipedia fix issue of curl getting HTML rather than JSON, issue that seen in '/media/daniella/B/git/danimesq/other of my repos/gitamigucho'
 
 improve /us redirect, by detecting the current URL and appending the destiny to it
 
