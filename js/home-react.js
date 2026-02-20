@@ -1,0 +1,107 @@
+(function () {
+  if (!window.React || !window.ReactDOM) {
+    return;
+  }
+
+  var e = React.createElement;
+  var useEffect = React.useEffect;
+  var useMemo = React.useMemo;
+  var useState = React.useState;
+
+  function FloatingOrb(props) {
+    return e('div', {
+      className: 'floating-orb ' + props.className,
+      style: { transform: 'translateY(' + props.offset + 'px)' }
+    });
+  }
+
+  function RegionCard(props) {
+    return e('a', { className: 'region-card', href: props.href, target: props.external ? '_blank' : undefined },
+      e('h3', null, props.name),
+      e('p', null, props.text)
+    );
+  }
+
+  function HomeApp() {
+    var _a = useState(0), scrollY = _a[0], setScrollY = _a[1];
+
+    useEffect(function () {
+      var ticking = false;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          setScrollY(window.scrollY || 0);
+          ticking = false;
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      return function () { window.removeEventListener('scroll', onScroll); };
+    }, []);
+
+    var creatures = useMemo(function () {
+      return [
+        { src: 'https://assets.tamigucho.com/assets/cms2/img/tamipedia/full/001.png', alt: 'Tamigucho creature 001' },
+        { src: 'https://factory.tamigucho.com/classic/img/creatures/2013/Firember.png', alt: 'Firember creature' },
+        { src: 'https://assets.tamigucho.com/assets/cms2/img/tamipedia/full/007.png', alt: 'Tamigucho creature 007' }
+      ];
+    }, []);
+
+    var regions = [
+      { name: 'Tamipedia', text: 'Lore, criaturas, tipos e tudo que expande o universo.', href: './tamipedia' },
+      { name: 'Cards', text: 'Coleções e artes oficiais pra quem curte a estética moncatching.', href: './cards' },
+      { name: 'Pink & Dark', text: 'Dualidade clássica da franquia em vibe retrô/arcade.', href: 'https://pinkdark.tamigucho.com/', external: true },
+      { name: 'Sunny & Rainny', text: 'Edição climática com identidade forte e contraste visual.', href: 'https://sunnyrainny.tamigucho.com/', external: true }
+    ];
+
+    return e('section', { className: 'anime-react-home' },
+      e(FloatingOrb, { className: 'orb-a', offset: scrollY * -0.08 }),
+      e(FloatingOrb, { className: 'orb-b', offset: scrollY * -0.12 }),
+      e(FloatingOrb, { className: 'orb-c', offset: scrollY * -0.05 }),
+
+      e('div', { className: 'hero-landscape' },
+        e('div', { className: 'hero-copy', style: { transform: 'translateY(' + (scrollY * -0.03) + 'px)' } },
+          e('p', { className: 'hero-tag' }, 'Virtual pets + lore + caos criativo'),
+          e('h1', null, 'Tamigucho Universe, agora em modo anime landscape'),
+          e('p', null, 'Mais camadas visuais, mais profundidade, mais rolê de franquia viva. Sem cara de landing genérica Web2 Jesules.'),
+          e('div', { className: 'anime-hex-actions' },
+            e('a', { href: './tamipedia', className: 'anime-pill' }, 'Explore creatures'),
+            e('a', { href: './cards', className: 'anime-pill alt' }, 'Open cards')
+          )
+        ),
+        e('div', { className: 'hero-panel', style: { transform: 'translateY(' + (scrollY * -0.05) + 'px)' } },
+          e('div', { className: 'anime-badge-row' }, creatures.map(function (c) {
+            return e('img', { key: c.src, src: c.src, alt: c.alt, width: '150' });
+          })),
+          e('img', { className: 'anime-logo', src: 'logotype.png', alt: 'Tamigucho logotype', width: '514' })
+        )
+      ),
+
+      e('div', { className: 'landscape-strip' },
+        e('article', { className: 'anime-story-card' },
+          e('img', { src: './tamipedia/img/IMG_20220629_185301_e~2.png', alt: 'Tamigucho anime style key art' }),
+          e('p', null, 'Anime background not original: re-used.'),
+          e('p', null, 'Creations by ', e('a', { href: 'https://danimesq.github.io/', target: '_blank' }, 'Daniella Mesquita'), '. Drawings by ', e('a', { href: 'https://www.instagram.com/dultrart/', target: '_blank' }, 'Adriano Dultra'), '.')
+        ),
+        e('article', { className: 'feature-block' },
+          e('h2', null, 'Parallax, hover, onscroll e aquela dramaticidade de opening de anime.'),
+          e('p', null, 'A home agora tem camadas reagindo ao scroll e cards com foco em navegação longa. É o tipo de começo que enche linguiça sim, mas enche com estilo e intenção.'),
+          e('p', null, 'Nos bastidores: React em runtime, sem pipeline pesado, mantendo compatibilidade com a estrutura atual.')
+        )
+      ),
+
+      e('section', { className: 'region-grid' },
+        regions.map(function (region) {
+          return e(RegionCard, { key: region.name, name: region.name, text: region.text, href: region.href, external: region.external });
+        })
+      )
+    );
+  }
+
+  var rootEl = document.getElementById('react-home');
+  if (!rootEl) {
+    return;
+  }
+
+  ReactDOM.createRoot(rootEl).render(e(HomeApp));
+})();

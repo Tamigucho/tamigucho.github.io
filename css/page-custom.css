@@ -180,3 +180,148 @@ body.home-anime .anime-story-card img {
         margin-bottom: 6px;
     }
 }
+
+/* React landscape refresh */
+body.home-anime #react-home {
+    position: relative;
+    overflow: hidden;
+}
+
+body.home-anime .anime-react-home {
+    position: relative;
+    display: grid;
+    gap: 24px;
+    padding: 8px;
+}
+
+body.home-anime .hero-landscape {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 18px;
+}
+
+body.home-anime .hero-copy,
+body.home-anime .hero-panel,
+body.home-anime .feature-block {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border: 2px solid #fff;
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+}
+
+body.home-anime .hero-tag {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #8f4dff;
+    margin-bottom: 8px;
+}
+
+body.home-anime .hero-copy h1 {
+    font-size: clamp(26px, 4vw, 44px);
+    line-height: 1.05;
+    margin: 0 0 12px;
+}
+
+body.home-anime .hero-panel .anime-badge-row {
+    margin-bottom: 12px;
+}
+
+body.home-anime .landscape-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+body.home-anime .feature-block h2 {
+    margin-top: 0;
+}
+
+body.home-anime .region-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+body.home-anime .region-card {
+    display: block;
+    text-decoration: none;
+    color: #1c1541 !important;
+    background: linear-gradient(135deg, #fff, #f4ecff);
+    border: 2px solid #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+body.home-anime .region-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.2);
+    font-weight: normal !important;
+}
+
+body.home-anime .region-card h3 {
+    margin: 0 0 8px;
+    color: #7a2cff;
+}
+
+body.home-anime .region-card p {
+    margin: 0;
+}
+
+body.home-anime .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(1px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+body.home-anime .orb-a {
+    width: 220px;
+    height: 220px;
+    top: -36px;
+    left: -70px;
+    background: radial-gradient(circle at 35% 35%, #ffe476, #ff61bd);
+}
+
+body.home-anime .orb-b {
+    width: 300px;
+    height: 300px;
+    top: 140px;
+    right: -120px;
+    background: radial-gradient(circle at 35% 35%, #73e7ff, #6044ff);
+}
+
+body.home-anime .orb-c {
+    width: 180px;
+    height: 180px;
+    bottom: 30px;
+    left: 20%;
+    background: radial-gradient(circle at 35% 35%, #fff, #ff8a54);
+}
+
+body.home-anime .anime-react-home > *:not(.floating-orb) {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    body.home-anime .hero-landscape,
+    body.home-anime .landscape-strip {
+        grid-template-columns: 1fr;
+    }
+
+    body.home-anime .region-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    body.home-anime .region-grid {
+        grid-template-columns: 1fr;
+    }
+}
