@@ -32,3 +32,151 @@ button.color:hover{color:#C40013!important}
     line-height: 24px !important;
 }
 /*.logo, logo:hover{background-color:rgba(0, 0, 0, 0.12)}*/
+
+/* Home (anime/cartoon refresh) */
+body.home-anime {
+    background:
+        radial-gradient(circle at 8% 15%, #ffd76e 0%, #ffd76e 8%, transparent 9%),
+        radial-gradient(circle at 92% 12%, #8ce0ff 0%, #8ce0ff 7%, transparent 8%),
+        linear-gradient(145deg, #fff6d7 0%, #ffdfe9 45%, #d8f1ff 100%);
+}
+
+body.home-anime .content article {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(104, 36, 99, 0.18);
+    margin: 12px;
+    padding: 20px;
+}
+
+body.home-anime header {
+    background: linear-gradient(90deg, #ff5aa9 0%, #8f4dff 55%, #24a8ff 100%);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+body.home-anime .anime-cta {
+    background: linear-gradient(45deg, #ffec70, #ff9cd5) !important;
+    border: 2px solid #1a1440;
+    color: #1a1440 !important;
+    font-weight: 700;
+    border-radius: 14px;
+    clip-path: polygon(8% 0%, 92% 0%, 100% 28%, 100% 72%, 92% 100%, 8% 100%, 0% 72%, 0% 28%);
+    transition: transform 0.2s ease;
+}
+
+body.home-anime .anime-cta:hover {
+    transform: translateY(-2px) scale(1.03);
+}
+
+body.home-anime .anime-nav-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 4px 0;
+}
+
+body.home-anime .anime-nav-grid a li {
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(3px);
+}
+
+body.home-anime .anime-hero {
+    display: grid;
+    gap: 22px;
+    text-align: center;
+}
+
+body.home-anime .anime-badge-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+body.home-anime .anime-badge-row img {
+    background: linear-gradient(135deg, #ffffff, #ffeff8);
+    border-radius: 18px;
+    border: 3px solid #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    padding: 6px;
+}
+
+body.home-anime .anime-brand-card,
+body.home-anime .anime-story-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.68));
+    border: 2px solid #fff;
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.home-anime .anime-icon,
+body.home-anime .anime-logo {
+    background: linear-gradient(180deg, #ffd24d, #ffbc00);
+    padding: 10px;
+    border: 2px solid #ffe798;
+}
+
+body.home-anime .anime-icon {
+    border-radius: 16px 16px 0 0;
+}
+
+body.home-anime .anime-logo {
+    border-radius: 16px;
+    max-width: 100%;
+    height: auto;
+}
+
+body.home-anime .anime-hex-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+body.home-anime .anime-pill {
+    display: inline-block;
+    color: #fff !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 13px 20px;
+    background: linear-gradient(45deg, #ff4f9c, #ff7a48);
+    border: 2px solid #fff;
+    clip-path: polygon(12% 0%, 88% 0%, 100% 50%, 88% 100%, 12% 100%, 0% 50%);
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+body.home-anime .anime-pill.alt {
+    background: linear-gradient(45deg, #6d5cff, #22c2ff);
+}
+
+body.home-anime .anime-pill:hover {
+    filter: brightness(1.12);
+    transform: translateY(-2px);
+    font-weight: 700 !important;
+}
+
+body.home-anime .anime-story-card img {
+    width: min(100%, 520px);
+    border-radius: 16px;
+    border: 3px solid #fff;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 700px) {
+    body.home-anime .anime-logo {
+        width: 100%;
+    }
+
+    body.home-anime .anime-cta {
+        margin-bottom: 6px;
+    }
+}
