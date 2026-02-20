@@ -6,6 +6,7 @@
   var e = React.createElement;
   var useEffect = React.useEffect;
   var useMemo = React.useMemo;
+  var useRef = React.useRef;
   var useState = React.useState;
 
   function FloatingOrb(props) {
@@ -24,9 +25,11 @@
 
   function SlideMarker(props) {
     return e('button', {
+      type: 'button',
       className: 'slide-marker' + (props.active ? ' active' : ''),
       onClick: props.onClick,
-      'aria-label': 'Go to slide ' + (props.index + 1)
+      'aria-label': 'Ir para slide ' + (props.index + 1),
+      'aria-current': props.active ? 'true' : 'false'
     }, e('span', null, String(props.index + 1).padStart(2, '0')));
   }
 
@@ -35,20 +38,9 @@
     var _b = useState(0), activeSlide = _b[0], setActiveSlide = _b[1];
     var slideDuration = 6;
     var _c = useState(slideDuration), secondsLeft = _c[0], setSecondsLeft = _c[1];
-
-    useEffect(function () {
-      var ticking = false;
-      function onScroll() {
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(function () {
-          setScrollY(window.scrollY || 0);
-          ticking = false;
-        });
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      return function () { window.removeEventListener('scroll', onScroll); };
-    }, []);
+    var _d = useState(false), isPaused = _d[0], setIsPaused = _d[1];
+    var _e = useState(true), autoplayEnabled = _e[0], setAutoplayEnabled = _e[1];
+    var touchStartX = useRef(null);
 
     var creatures = useMemo(function () {
       return [
@@ -86,7 +78,41 @@
     ];
 
     useEffect(function () {
-      // Slideshow timer: counts down each second and loops to next slide.
+      var ticking = false;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          setScrollY(window.scrollY || 0);
+          ticking = false;
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      return function () { window.removeEventListener('scroll', onScroll); };
+    }, []);
+
+    useEffect(function () {
+      // Respect reduced-motion preference by disabling autoplay.
+      var media = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!media) return;
+      setAutoplayEnabled(!media.matches);
+      function onMediaChange(event) {
+        setAutoplayEnabled(!event.matches);
+      }
+      if (media.addEventListener) media.addEventListener('change', onMediaChange);
+      else media.addListener(onMediaChange);
+      return function () {
+        if (media.removeEventListener) media.removeEventListener('change', onMediaChange);
+        else media.removeListener(onMediaChange);
+      };
+    }, []);
+
+    useEffect(function () {
+      if (!autoplayEnabled || isPaused) {
+        return;
+      }
+
+      // Slideshow timer with per-second countdown.
       var id = window.setInterval(function () {
         setSecondsLeft(function (current) {
           if (current <= 1) {
@@ -102,33 +128,75 @@
       return function () {
         window.clearInterval(id);
       };
-    }, [slides.length]);
+    }, [autoplayEnabled, isPaused, slides.length]);
 
     function goToSlide(index) {
       setActiveSlide(index);
       setSecondsLeft(slideDuration);
     }
 
+    function goPrev() {
+      goToSlide((activeSlide - 1 + slides.length) % slides.length);
+    }
+
+    function goNext() {
+      goToSlide((activeSlide + 1) % slides.length);
+    }
+
+    function onTouchStart(event) {
+      touchStartX.current = event.changedTouches[0].screenX;
+    }
+
+    function onTouchEnd(event) {
+      if (touchStartX.current === null) return;
+      var endX = event.changedTouches[0].screenX;
+      var delta = endX - touchStartX.current;
+      touchStartX.current = null;
+      if (Math.abs(delta) < 45) return;
+      if (delta > 0) goPrev();
+      else goNext();
+    }
+
     var currentSlide = slides[activeSlide];
+    var countdownText = autoplayEnabled ? (secondsLeft + 's') : 'manual';
 
     return e('section', { className: 'anime-react-home' },
       e(FloatingOrb, { className: 'orb-a', offset: scrollY * -0.08 }),
       e(FloatingOrb, { className: 'orb-b', offset: scrollY * -0.12 }),
       e(FloatingOrb, { className: 'orb-c', offset: scrollY * -0.05 }),
 
-      e('section', { className: 'top-slideshow' },
-        e('div', { className: 'slideshow-main' },
-          e('div', { className: 'slideshow-copy' },
+      e('section', {
+        className: 'top-slideshow',
+        role: 'region',
+        'aria-roledescription': 'carousel',
+        'aria-label': 'Tamigucho highlights',
+        onMouseEnter: function () { setIsPaused(true); },
+        onMouseLeave: function () { setIsPaused(false); },
+        onFocusCapture: function () { setIsPaused(true); },
+        onBlurCapture: function () { setIsPaused(false); }
+      },
+        e('div', {
+          className: 'slideshow-main',
+          onTouchStart: onTouchStart,
+          onTouchEnd: onTouchEnd
+        },
+          e('div', { className: 'slideshow-copy', role: 'group', 'aria-label': 'Slide ' + (activeSlide + 1) + ' de ' + slides.length },
             e('p', { className: 'hero-tag' }, 'Featured storyline sequence'),
-            e('h2', null, currentSlide.title),
+            e('h2', { id: 'slide-title' }, currentSlide.title),
             e('p', null, currentSlide.text),
-            e('div', { className: 'slide-countdown' },
-              e('strong', null, secondsLeft + 's'),
-              e('span', null, ' para próxima transição')
+            e('div', { className: 'slide-controls-row' },
+              e('div', { className: 'slide-countdown', 'aria-live': 'polite' },
+                e('strong', null, countdownText),
+                e('span', null, autoplayEnabled ? ' para próxima transição' : ' autoplay desativado')
+              ),
+              e('div', { className: 'slide-arrow-controls' },
+                e('button', { type: 'button', className: 'slide-arrow', onClick: goPrev, 'aria-label': 'Slide anterior' }, '◀'),
+                e('button', { type: 'button', className: 'slide-arrow', onClick: goNext, 'aria-label': 'Próximo slide' }, '▶')
+              )
             )
           ),
           e('div', { className: 'slideshow-media' },
-            e('img', { src: currentSlide.image, alt: currentSlide.title })
+            e('img', { src: currentSlide.image, alt: currentSlide.title, 'aria-labelledby': 'slide-title' })
           )
         ),
         e('div', { className: 'slide-markers' }, slides.map(function (_, index) {
