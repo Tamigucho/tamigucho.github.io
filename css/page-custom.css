@@ -592,3 +592,64 @@ body.home-anime .slide-marker:focus-visible {
         align-items: stretch;
     }
 }
+
+/* Mobile nav drawer toggle (avoid stacked header overflow) */
+body.home-anime .nav-toggle {
+    display: none;
+    width: 42px;
+    height: 36px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #6d5cff, #22c2ff);
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+body.home-anime .nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+    body.home-anime .nav-toggle {
+        display: inline-flex;
+        order: 1;
+    }
+
+    body.home-anime .anime-cta {
+        order: 2;
+    }
+
+    body.home-anime .anime-nav-grid {
+        order: 3;
+        width: 100%;
+        display: none;
+        max-height: calc(100vh - 130px);
+        overflow: auto !important;
+        padding: 8px 2px;
+        background: rgba(18, 13, 39, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 12px;
+    }
+
+    body.home-anime header.nav-expanded .anime-nav-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    body.home-anime header.nav-expanded .anime-nav-grid a {
+        width: 100%;
+    }
+
+    body.home-anime header.nav-expanded .anime-nav-grid a li {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

@@ -33,6 +33,38 @@
     }, e('span', null, String(props.index + 1).padStart(2, '0')));
   }
 
+
+  function initMobileNavToggle() {
+    var header = document.querySelector('body.home-anime header');
+    var navToggle = document.querySelector('body.home-anime .nav-toggle');
+    var navList = document.getElementById('main-nav-list');
+    if (!header || !navToggle || !navList) return;
+
+    function closeNav() {
+      header.classList.remove('nav-expanded');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    navToggle.addEventListener('click', function () {
+      var willOpen = !header.classList.contains('nav-expanded');
+      header.classList.toggle('nav-expanded', willOpen);
+      navToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+
+    navList.addEventListener('click', function (event) {
+      var target = event.target;
+      if (target && target.closest('a')) {
+        closeNav();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 700) {
+        closeNav();
+      }
+    });
+  }
+
   function HomeApp() {
     var _a = useState(0), scrollY = _a[0], setScrollY = _a[1];
     var _b = useState(0), activeSlide = _b[0], setActiveSlide = _b[1];
@@ -247,6 +279,8 @@
       )
     );
   }
+
+  initMobileNavToggle();
 
   var rootEl = document.getElementById('react-home');
   if (!rootEl) {
